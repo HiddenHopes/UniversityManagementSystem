@@ -1,0 +1,4 @@
+INSERT INTO `studentdb`.`student` (`id`, `name`, `age`, `email`, `dept`) VALUES ('12', 'Mr M', '30', 'abdz9@gmail.com', 'cse');
+INSERT INTO `studentdb`.`student` (`id`, `name`, `age`, `email`, `dept`) VALUES ('13', 'Mr K', '35', 'avcd10@gmail.com', 'EE');
+INSERT INTO `studentdb`.`student` (`id`, `name`, `age`, `email`, `dept`) VALUES ('201127', 'Md. Sayem Uddin', '21', 'c201127@ygrad.iiuc.ac.bd', 'cse');
+UPDATE `studentdb`.`student` SET `email` = 'c201127@ugrad.iiuc.ac.bd' WHERE (`id` = '201127');
