@@ -1,0 +1,3 @@
+INSERT INTO `studentdb`.`student` (`id`, `name`, `age`, `email`, `dept`) VALUES ('12', 'naimul', '21', 'naimul@gmail.com', 'cse');
+INSERT INTO `studentdb`.`student` (`id`, `name`, `age`, `email`, `dept`) VALUES ('13 ', 'mr k', '32', 'mrk@gmail.com', 'cse');
+INSERT INTO `studentdb`.`student` (`id`, `name`, `age`, `email`, `dept`) VALUES ('201049', 'naimul islam', '22', 'naimulislam@gmail.com', 'cse');
