@@ -1,4 +1,3 @@
-package com.sd;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -7,7 +6,7 @@ import java.sql.Statement;
 
 public class DBUTILS {
 
-    private static final String jdbcURL = "jdbc:mysql://localhost:3306/studentdbb";
+    private static final String jdbcURL = "jdbc:mysql://localhost:3306/studentdb";
     private static final String jdbcUsername = "root";
     private static final String jdbcPassword = "root";
 
