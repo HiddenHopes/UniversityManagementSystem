@@ -5,6 +5,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.sql.ResultSet;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /*
@@ -22,8 +23,11 @@ public class StudentDetails extends javax.swing.JFrame {
     /**
      * Creates new form StudentDetails
      */
+    int click = 0;
     public StudentDetails() {
         initComponents();
+        //this.getRootPane().setDefaultButton(searchButton);
+        this.getRootPane().setDefaultButton(srcButton);
     }
 
     /**
@@ -38,8 +42,6 @@ public class StudentDetails extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jPanel2 = new RoundedPanel(30);
-        searchField = new javax.swing.JTextField();
-        searchButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -49,6 +51,9 @@ public class StudentDetails extends javax.swing.JFrame {
         ageField = new javax.swing.JTextField();
         emailField = new javax.swing.JTextField();
         deptField = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        srcButton = new javax.swing.JButton();
+        searchField = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -59,103 +64,80 @@ public class StudentDetails extends javax.swing.JFrame {
         jPanel1.add(jLabel3);
         jLabel3.setBounds(1, 0, 720, 110);
 
-        jPanel2.setBackground(new java.awt.Color(0, 255, 255,60));
-
-        searchField.setText("Type Student ID");
-
-        searchButton.setBackground(new java.awt.Color(0, 255, 255));
-        searchButton.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        searchButton.setText("Search");
-        searchButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchButtonActionPerformed(evt);
-            }
-        });
+        jPanel2.setBackground(new java.awt.Color(0, 255, 255,100));
+        jPanel2.setLayout(null);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel2.setForeground(new java.awt.Color(102, 255, 255));
         jLabel2.setText("Student Details");
+        jPanel2.add(jLabel2);
+        jLabel2.setBounds(150, 70, 165, 30);
 
         jLabel4.setBackground(new java.awt.Color(204, 204, 204));
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 18, 235));
+        jLabel4.setForeground(new java.awt.Color(51, 255, 255));
         jLabel4.setText("Name");
+        jPanel2.add(jLabel4);
+        jLabel4.setBounds(49, 113, 109, 22);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 18, 235));
+        jLabel5.setForeground(new java.awt.Color(51, 255, 255));
         jLabel5.setText("Age");
+        jPanel2.add(jLabel5);
+        jLabel5.setBounds(49, 157, 109, 22);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 18, 235));
+        jLabel6.setForeground(new java.awt.Color(51, 255, 255));
         jLabel6.setText("Email");
+        jPanel2.add(jLabel6);
+        jLabel6.setBounds(49, 199, 109, 22);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 18, 235));
+        jLabel7.setForeground(new java.awt.Color(51, 255, 255));
         jLabel7.setText("Department");
+        jPanel2.add(jLabel7);
+        jLabel7.setBounds(50, 250, 109, 22);
 
+        nameField.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jPanel2.add(nameField);
+        nameField.setBounds(164, 112, 213, 30);
+
+        ageField.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         ageField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ageFieldActionPerformed(evt);
             }
         });
+        jPanel2.add(ageField);
+        ageField.setBounds(164, 156, 54, 26);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(84, 84, 84)
-                        .addComponent(searchField, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(21, 21, 21)
-                        .addComponent(searchButton))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(142, 142, 142)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ageField, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(emailField)
-                    .addComponent(deptField))
-                .addContainerGap(70, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(searchField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(ageField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(emailField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(deptField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(22, Short.MAX_VALUE))
-        );
+        emailField.setFont(new java.awt.Font("Tahoma", 3, 16)); // NOI18N
+        jPanel2.add(emailField);
+        emailField.setBounds(164, 198, 230, 30);
+
+        deptField.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jPanel2.add(deptField);
+        deptField.setBounds(164, 242, 213, 30);
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(51, 255, 255));
+        jLabel8.setText("ID");
+        jPanel2.add(jLabel8);
+        jLabel8.setBounds(90, 20, 30, 40);
+
+        srcButton.setBackground(new java.awt.Color(51, 255, 51));
+        srcButton.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        srcButton.setForeground(new java.awt.Color(255, 0, 0));
+        srcButton.setText("Search");
+        srcButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                srcButtonActionPerformed(evt);
+            }
+        });
+        jPanel2.add(srcButton);
+        srcButton.setBounds(250, 19, 140, 40);
+        jPanel2.add(searchField);
+        searchField.setBounds(130, 25, 110, 30);
 
         jPanel1.add(jPanel2);
         jPanel2.setBounds(160, 110, 430, 290);
@@ -177,17 +159,19 @@ public class StudentDetails extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void ageFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ageFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ageFieldActionPerformed
 
-    private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
+    private void srcButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_srcButtonActionPerformed
+        // TODO add your handling code here:
         String id = searchField.getText();
-        int i = Integer.parseInt(id);
-        
-        String query = "select *from student where id = "+i;
+        //int i = Integer.parseInt(id);
+
+        String query = "select *from student where id = "+id;
         String Name = "";
         String Age = "";
         String Email = "";
@@ -201,14 +185,22 @@ public class StudentDetails extends javax.swing.JFrame {
                 Dept = rs.getString("dept");
             }
         } catch(Exception e){
-            
+
         }
-        nameField.setText(Name);
-        ageField.setText(Age);
-        deptField.setText(Dept);
-        emailField.setText(Email);
-        
-    }//GEN-LAST:event_searchButtonActionPerformed
+        if(!"".equals(Name)){
+            nameField.setText(Name);
+            ageField.setText(Age);
+            deptField.setText(Dept);
+            emailField.setText(Email);
+        }
+        else{
+            JOptionPane.showMessageDialog(this,"Student ID not Found","Error",JOptionPane.ERROR_MESSAGE);
+        }
+        nameField.setEditable(false);
+        ageField.setEditable(false);
+        deptField.setEditable(false);
+        emailField.setEditable(false);
+    }//GEN-LAST:event_srcButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -256,11 +248,12 @@ public class StudentDetails extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField nameField;
-    private javax.swing.JButton searchButton;
     private javax.swing.JTextField searchField;
+    private javax.swing.JButton srcButton;
     // End of variables declaration//GEN-END:variables
     class RoundedPanel extends JPanel
     {
