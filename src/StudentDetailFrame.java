@@ -192,18 +192,18 @@ public class StudentDetailFrame extends javax.swing.JFrame {
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
        String id = idTextField.getText();
-String query = "select * from student where id = "+id;
-try {
-    ResultSet rs = DBUTILS.queryExecute(query);
-    if(rs.next()){
-        nameTextField.setText(rs.getString("name"));
-        ageTextField.setText(rs.getString("age"));
-        emailTextField.setText(rs.getString("email"));
-        deptTextField.setText(rs.getString("dept"));
-        
-    }
-} catch(SQLException | ClassNotFoundException e){
-}
+       String query = "select * from student where id = "+id;
+            try {
+                ResultSet rs = DBUTILS.queryExecute(query);
+                if(rs.next()){
+                    nameTextField.setText(rs.getString("name"));
+                    ageTextField.setText(rs.getString("age"));
+                    emailTextField.setText(rs.getString("email"));
+                    deptTextField.setText(rs.getString("dept"));
+
+                }
+            } catch(SQLException | ClassNotFoundException e){
+            }
 
     }//GEN-LAST:event_searchButtonActionPerformed
 
