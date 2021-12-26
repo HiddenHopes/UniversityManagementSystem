@@ -1,0 +1,1 @@
+INSERT INTO studentdb.`student` (id, name, age, email, dept) VALUES ('201122', 'Tareq Ahmed', '21', 'c201122@ugrad.iiuc.ac.bd', 'CSE');
