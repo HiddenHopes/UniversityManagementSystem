@@ -6,9 +6,9 @@ import java.sql.Statement;
 
 public class DBUTILS {
 
-    private static final String jdbcURL = "jdbc:mysql://localhost:3306/studentdb";
+    private static final String jdbcURL = "jdbc:mysql://localhost:3306/sdfinal";
     private static final String jdbcUsername = "root";
-    private static final String jdbcPassword = "root";
+    private static final String jdbcPassword = "";
 
     public static Connection getConnection() throws SQLException, ClassNotFoundException{
         Class.forName("com.mysql.jdbc.Driver"); 

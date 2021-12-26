@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package com.sd;
+//package com.sd;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -194,7 +194,8 @@ public class StudentDetailFrame extends javax.swing.JFrame {
        String id = idTextField.getText();
 String query = "select * from student where id = "+id;
 try {
-    ResultSet rs = DBUTILS.queryExecute(query);
+    
+         ResultSet rs = DBUTILS.queryExecute(query);
     if(rs.next()){
         nameTextField.setText(rs.getString("name"));
         ageTextField.setText(rs.getString("age"));
