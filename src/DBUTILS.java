@@ -6,7 +6,7 @@ import java.sql.Statement;
 
 public class DBUTILS {
 
-    private static final String jdbcURL = "jdbc:mysql://localhost:3306/studentdb";
+    private static final String jdbcURL = "jdbc:mysql://localhost:3306/studentdata";
     private static final String jdbcUsername = "root";
     private static final String jdbcPassword = "root";
 
