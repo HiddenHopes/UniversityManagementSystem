@@ -8,6 +8,8 @@ package com.sd;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -194,6 +196,7 @@ public class StudentDetailFrame extends javax.swing.JFrame {
        String id = idTextField.getText();
 String query = "select * from student where id = "+id;
 try {
+    
     ResultSet rs = DBUTILS.queryExecute(query);
     if(rs.next()){
         nameTextField.setText(rs.getString("name"));
@@ -202,8 +205,10 @@ try {
         deptTextField.setText(rs.getString("dept"));
         
     }
-} catch(SQLException | ClassNotFoundException e){
-}
+} catch(SQLException e){
+}       catch (ClassNotFoundException ex) {
+            Logger.getLogger(StudentDetailFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }//GEN-LAST:event_searchButtonActionPerformed
 
