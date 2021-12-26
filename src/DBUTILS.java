@@ -6,13 +6,13 @@ import java.sql.Statement;
 
 public class DBUTILS {
 
-    private static final String jdbcURL = "jdbc:mysql://localhost:3306/studentdb";
+    /*private static final String jdbcURL = "jdbc:mysql://localhost:3306/studentdb";
     private static final String jdbcUsername = "root";
-    private static final String jdbcPassword = "root";
+    private static final String jdbcPassword = "root";*/
 
     public static Connection getConnection() throws SQLException, ClassNotFoundException{
-        Class.forName("com.mysql.jdbc.Driver"); 
-        Connection connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
+        Class.forName("org.sqlite.JDBC"); 
+        Connection connection = DriverManager.getConnection("jdbc:sqlite:studentdb.db");
         return connection;
     }
 
