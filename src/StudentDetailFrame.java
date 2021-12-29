@@ -46,6 +46,8 @@ public class StudentDetailFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel2.setForeground(new java.awt.Color(255, 0, 0));
+
         jLabel1.setText("Student Details");
 
         idTextField.addActionListener(new java.awt.event.ActionListener() {
