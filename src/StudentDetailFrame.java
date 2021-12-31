@@ -180,7 +180,7 @@ public class StudentDetailFrame extends javax.swing.JFrame {
                 nameTextField.setText(rs.getString("name"));
                 ageTextField.setText(rs.getString("age"));
                 emailTextField.setText(rs.getString("email"));
-                deptTextField.setText(rs.getString("dept"));
+                deptTextField.setText(rs.getString("dept."));
             }
             rs.close();
         } catch (SQLException | ClassNotFoundException ex) {
