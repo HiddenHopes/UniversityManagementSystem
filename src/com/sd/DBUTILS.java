@@ -1,3 +1,5 @@
+package com.sd;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -6,12 +8,12 @@ import java.sql.Statement;
 
 public class DBUTILS {
 
-    private static final String jdbcURL = "jdbc:mysql://127.0.0.1:3306/studentdb";
+    private static final String jdbcURL = "jdbc:mysql://localhost:3306/studentdb";
     private static final String jdbcUsername = "root";
     private static final String jdbcPassword = "root";
 
     public static Connection getConnection() throws SQLException, ClassNotFoundException{
-        Class.forName("com.mysql.jdbc.Driver"); 
+        Class.forName("com.mysql.cj.jdbc.Driver"); 
         Connection connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
         return connection;
     }
